@@ -53,7 +53,9 @@ const productNames: string[] = [
 export async function seed(database: SQLiteDatabase) {
   await database.withTransactionAsync(async () => {
     for (const name of productNames) {
-      await database.runAsync("INSERT INTO products (name) VALUES (?)", [name]);
+      await database.runAsync("INSERT INTO products (name) VALUES (?);", [
+        name,
+      ]);
     }
   });
 }

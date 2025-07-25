@@ -16,7 +16,6 @@ export async function databaseInit(database: SQLiteDatabase) {
             name TEXT NOT NULL
         );
     `);
-
     await seed(database);
   }
 }
