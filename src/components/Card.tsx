@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 
-export function Card({ id, name }: Product) {
+export function Card({ product }: { product: Product }) {
   return (
     <View
       style={{
@@ -10,8 +10,8 @@ export function Card({ id, name }: Product) {
         gap: 12,
       }}
     >
-      <Text>{id}</Text>
-      <Text>{name}</Text>
+      <Text>{product.id}</Text>
+      <Text>{product.name}</Text>
     </View>
   );
 }
