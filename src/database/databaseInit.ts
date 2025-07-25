@@ -5,7 +5,7 @@ export async function databaseInit(database: SQLiteDatabase) {
   const result = await database.getFirstAsync<Product>(`
         SELECT name 
         FROM sqlite_master 
-        WHERE type='table' AND name='prodcts';
+        WHERE type='table' AND name='products';
     `);
   //Cria a tabela se ela não existe
   if (!result) {
