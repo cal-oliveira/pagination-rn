@@ -1,20 +1,15 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import { Home } from "./src/app/Home";
+import { Loading } from "./src/components/Loading";
+import { Suspense } from "react";
+import { databaseInit } from "./src/database/databaseInit";
+import { SQLiteProvider } from "expo-sqlite";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Home />
-    </View>
+    <Suspense fallback={<Loading />}>
+      <SQLiteProvider databaseName="myapp.db" onInit={databaseInit} useSuspense>
+        <Home />
+      </SQLiteProvider>
+    </Suspense>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
