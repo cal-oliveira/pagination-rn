@@ -1,4 +1,5 @@
 import { type SQLiteDatabase } from "expo-sqlite";
+import { seed } from "./seed";
 
 export async function databaseInit(database: SQLiteDatabase) {
   //Verifica se a tabela ja existe
@@ -15,5 +16,7 @@ export async function databaseInit(database: SQLiteDatabase) {
             name TEXT NOT NULL
         );
     `);
+
+    await seed(database);
   }
 }
