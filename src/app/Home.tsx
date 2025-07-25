@@ -27,9 +27,9 @@ export function Home() {
   return (
     <View>
       <FlatList
-        data={products}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Card product={item} />}
+        data={products} // array de produtos que serão passados para o componente                      *
+        keyExtractor={(item) => item.id.toString()} // key para cada item da lista                     *
+        renderItem={({ item }) => <Card product={item} />} // componente usado para cada item da lista *
         contentContainerStyle={{
           paddingHorizontal: 16,
           paddingVertical: 62,
