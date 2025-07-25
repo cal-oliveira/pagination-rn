@@ -30,6 +30,11 @@ export function Home() {
         data={products}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => <Card product={item} />}
+        contentContainerStyle={{
+          paddingHorizontal: 16,
+          paddingVertical: 62,
+          gap: 16,
+        }}
       />
     </View>
   );
